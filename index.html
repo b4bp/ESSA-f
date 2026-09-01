@@ -898,17 +898,16 @@
         }
 
         .postcard {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            margin-top: 0;
-            transition: max-height .8s cubic-bezier(.2, .8, .2, 1), opacity .6s ease, margin .8s ease;
-        }
-        .postcard.open {
-            max-height: 920px;
-            opacity: 1;
-            margin-top: 20px;
-        }
+    display: none;
+    opacity: 0;
+    margin-top: 0;
+    transition: opacity .6s ease, margin .8s ease;
+}
+.postcard.open {
+    display: block;
+    opacity: 1;
+    margin-top: 20px;
+}
         .postcard-inner {
             background: var(--paper);
             border-radius: 4px;
@@ -2011,14 +2010,14 @@
         <!-- ===== زر تشغيل خلفية الموقع ===== -->
         <button class="bg-toggle-btn" id="toggleBgBtn">
             <span class="icon">🎬</span>
-            <span id="bgBtnText">شغلي خلفية الموقع</span>
+            <span id="bgBtnText">من هني تشغلين الخلفيه</span>
         </button>
 
         <div class="theme-switch" role="group" aria-label="اختيار النغمة اللونية">
-            <button data-t="sepia" class="active"><span class="dot"></span><span class="label">دافئ</span></button>
-            <button data-t="noir"><span class="dot"></span><span class="label">نوار</span></button>
-            <button data-t="rosewood"><span class="dot"></span><span class="label">وردي</span></button>
-            <button data-t="midnight"><span class="dot"></span><span class="label">ليلي</span></button>
+            <button data-t="sepia" class="active"><span class="dot"></span><span class="label">صفرني</span></button>
+            <button data-t="noir"><span class="dot"></span><span class="label">نورني</span></button>
+            <button data-t="rosewood"><span class="dot"></span><span class="label">وردني</span></button>
+            <button data-t="midnight"><span class="dot"></span><span class="label">ليلني</span></button>
         </div>
 
         <div class="filmstrip">
@@ -2031,16 +2030,16 @@
         </div>
 
         <header>
-            <span class="eyebrow">فيلمنا الطويل</span>
+            <span class="eyebrow">اهداء مني لج </span>
             <h1>عيسى<span class="amp">♥</span>فرح</h1>
-            <p class="subtitle">حلقة جديدة كل يوم، وكلها تستاهل الإعادة</p>
+            <p class="subtitle">اتمنى انج استمتعتي بالفلم</p>
         </header>
 
         <!-- ============ فيديو الهدية + الأزرار أسفله ============ -->
         <div class="gift-video-container" id="giftVideoContainer">
             <video id="giftVideo" playsinline preload="metadata">
                 <source src="gift-video.mp4" type="video/mp4">
-                متصفحك لا يدعم تشغيل الفيديو.
+                متصفحك لا يدعم تشغيل الفيديو 
             </video>
             <!-- شريط التحكم الداخلي (يظهر فقط في الشاشة الكاملة) -->
 <div class="video-inner-controls" id="videoInnerControls">
@@ -2126,40 +2125,40 @@
 
         <div class="ticket">
             <div class="ticket-main">
-                <p class="ticket-title">تذكرة رحلتنا المستمرة</p>
+                <p class="ticket-title">هذي تحسب</p>
                 <div class="digits">
                     <div class="digit-box"><div class="digit-num" id="t-days">000</div><div class="digit-label">يوم</div></div>
                     <div class="digit-box"><div class="digit-num" id="t-hours">00</div><div class="digit-label">ساعة</div></div>
                     <div class="digit-box"><div class="digit-num" id="t-mins">00</div><div class="digit-label">دقيقة</div></div>
                     <div class="digit-box"><div class="digit-num" id="t-secs">00</div><div class="digit-label">ثانية</div></div>
                 </div>
-                <p class="ticket-foot">الانطلاق: ١٨ مايو ٢٠٢٥ — والرحلة مستمرة</p>
+                <p class="ticket-foot"> كل ثانيه </p>
             </div>
             <div class="ticket-divider"></div>
-            <div class="ticket-stub">تذكرة صالحة طول العمر</div>
+            <div class="ticket-stub">  قضيتها معاج</div>
         </div>
 
         <section class="letter">
             <div class="letter-head">
-                <span class="eyebrow">بريد خاص</span>
+                <span class="eyebrow">بريد مو برد يالثوله</span>
                 <h2>رسالة لفرح</h2>
-                <p>اضغطي الزر وخليها تتكتب قدامك</p>
+                <p>اضغطي الزر وخليها تتكتب قدامج</p>
             </div>
 
             <div class="letter-controls">
                 <button class="icon-btn" id="showLetterBtn">
     <img class="icon-img" src="icons/show-letter.jpg" alt="" onerror="this.style.display='none'">
-    <span>اقرئي الرسالة</span>
+    <span>اقري الرساله</span>
 </button>
 <button class="icon-btn hidden" id="hideLetterBtn">
     <img class="icon-img" src="icons/hide-letter.jpg" alt="" onerror="this.style.display='none'">
-    <span>طي الرسالة</span>
+    <span>طي الرساله</span>
 </button>
             </div>
 
             <div class="postcard" id="letterCard">
                 <div class="postcard-inner">
-                    <div class="postmark">فرح<br>١٨.٠٥.٢٠٢٥</div>
+                    <div class="postmark">فرح<br>1.09.2026</div>
                     <div class="stamp">♥</div>
                     <div class="letter-body" id="letterBody"></div>
                     <div class="letter-sign" id="letterSign">— عيسى</div>
@@ -2218,11 +2217,11 @@
             <audio id="song" src="song.mp3" preload="metadata"></audio>
         </div>
 
-        <footer>عيسى وفرح — منذ ١٨ مايو ٢٠٢٥</footer>
+        <footer>اهداء من عيتى لفلوحته</footer>
         <!-- زر GIF في نهاية الموقع -->
         <div class="end-gift-btn-wrap">
             <a href="https://b4bp.github.io/ESSA-ff/" target="_blank" class="end-gift-btn" id="endGiftLink">
-                <img src="end-gif.gif" alt="اضغطي هنا" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'color:white; font-size:16px;\'>اضغطي هنا</span>'">
+                <img src="end-gif.gif" alt="اضغطي هني" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'color:white; font-size:16px;\'>اضغطي هنا</span>'">
             </a>
         </div>
     </div>
@@ -2349,18 +2348,18 @@
                         bgVideo.classList.add('active');
                         bgOverlay.classList.add('hidden');
                         isActive = true;
-                        btnText.textContent = '⏹️ أوقفي الخلفية';
-                        showAlert('🎬 تم تشغيل خلفية الموقع', 'success');
+                        btnText.textContent = 'من هني تطفينها';
+                        showAlert('🎬 شغلتيها', 'success');
                     }).catch(() => {
-                        showAlert('⚠️ تعذر تشغيل الفيديو، تأكدي من وجود ملف site-bg.mp4', 'warning');
+                        showAlert('', 'warning');
                     });
                 } else {
                     bgVideo.pause();
                     bgVideo.classList.remove('active');
                     bgOverlay.classList.remove('hidden');
                     isActive = false;
-                    btnText.textContent = '🎬 شغلي خلفية الموقع';
-                    showAlert('⏹️ تم إيقاف خلفية الموقع', 'info');
+                    btnText.textContent = 'من هني تشغلين الخلفيه';
+                    showAlert('طفيتيها', 'info');
                 }
             });
         }
@@ -2923,10 +2922,11 @@ function initGiftVideo() {
 
         // الرسالة
         const LETTER_PARAGRAPHS = [
-            "فرح،",
-            "سنة وثلاث أشهر ونحن نكتب قصة ما كنت أتخيل يوم إنها تصير بهالجمال. كل يوم فيها كان درس جديد بكيف الحب يكبر لما يكون صادق، وكيف الإنسان يرتاح لما يلقي حد يفهمه بدون ما يشرح.",
-            "أحبك على طبيعتك، وعلى صبرك، وعلى كل مرة قلت فيها كلمة خلتني أشوف الدنيا بشكل ثاني. هالتذكرة فوق تعدّ الأيام، بس الحقيقة إحساسي فيك ما يتحسب بالأرقام.",
-            "يعطيك العافية إنك دايم جنبي."
+            "يمكن الرساله هذي تختلف و جت متأخر بس حاب اهديج  هالموقع وهالرساله ",
+            "وحاب اقول لج فيها انج انسانه عظيمه وقويه والي حولج محظوظين بانسانه نفسج واول انسانه تدخل قلبي واحبها للدرجه هذي وحبيت كل شيء فيج وعسى ربي يوفقج ويسهل لج وين ماتروحين وهذا قليل بحقج تستاهلين اكثر و اكبر وعلى كثر وقفاتج معاي بكل صغيره وكبيره وانا كنت لج كذلك ",
+            "ماودي ابدا بكلام عاطفي وماودي يضايقج بس يشهد الله اني احبج اكثر من روحي  مهما صار وحصل تبقين حبيبت قلبي ونظر عيني وعيوني بلاياج ماتستاهل ماها وبلاياج انا ما استاهل عيوني وبعدج ياخذ روحي معاه وقربج يرد روحي معاه مابين قربج ونفسي اخترت قربج على نفسي تبقين قطعه مني مهما حاولوا بالبعد يبعدونج عني نظر نور عيني و شريكه روحي قبل حياتي جعل ربي ان ماكتب لي مكان معاج بالدنيا انا اطلبها بالاخره والدنيا اذا ربي كتب ",
+            "انا مازلت لج و لج ضهر و سند ولا يجي ببالج انه بسبب الي صار ممكن اتغير عليج بالعكس حضني للحين لج وكلني لج و الله لايحرمني منج ولا من شوفتج وملقاج واتمنى اشوف الابتسامه الحلوه هذي ايي نفسس هذي جعلها ماتفارق تنونج يالتلبه تكفين بوسه  شدي حيلج وانا معاج بالمره قبل الحلوه و احبج",
+            "وشيء اخير ترا ماهان علي اخليج مع الضيق وهذا كله وادري كانت فتره صدمه لج و لي كذلك بس انا رجال اقدر اتحمل المشاعر هذي بس انتي بنوته تتوته المشاعر القويه هذي تاثر عليج اكثر مني وكنت اقدر اسد الباب بس ماعمري سديته لج انتي مالكه الباب وصاحبه اتمنى عجبج الموقع او الاهداء احبج يا كلعمري يمكن ما وصلت الي بقلبي بس صدقيني اكثر من جذي   وكله قليل بحقج"
         ];
 
         const showLetterBtn = document.getElementById('showLetterBtn');
@@ -2963,17 +2963,17 @@ function initGiftVideo() {
                     letterBody.appendChild(currentP);
                 }
                 const text = paragraphs[pIndex];
-                if (cIndex < text.length) {
+                                if (cIndex < text.length) {
                     const cursor = currentP.querySelector('.cursor');
                     currentP.insertBefore(document.createTextNode(text[cIndex]), cursor);
                     cIndex++;
-                    typeTimer = setTimeout(step, 22 + Math.random() * 20);
+                    typeTimer = setTimeout(step, 55 + Math.random() * 30);
                 } else {
                     const cursor = currentP.querySelector('.cursor');
                     if (cursor) cursor.remove();
                     pIndex++;
                     cIndex = 0;
-                    typeTimer = setTimeout(step, 260);
+                    typeTimer = setTimeout(step, 600);
                 }
             }
             step();
