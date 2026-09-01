@@ -2937,47 +2937,43 @@ function initGiftVideo() {
         let typing = false,
             typeTimer = null;
 
-        function typeParagraphs(paragraphs, onDone) {
-            if (!letterBody) return;
-            letterBody.innerHTML = '';
-            let pIndex = 0,
-                cIndex = 0,
-                currentP = null;
-            typing = true;
+     function typeParagraphs(paragraphs, onDone) {
+  if (!letterBody) return;
+  letterBody.innerHTML = '';
+  let pIndex = 0, cIndex = 0, currentP = null, textNode = null, cursor = null;
+  typing = true;
 
-            function step() {
-                if (!typing) return;
-                if (pIndex >= paragraphs.length) {
-                    const cur = letterBody.querySelector('.cursor');
-                    if (cur) cur.remove();
-                    typing = false;
-                    if (onDone) onDone();
-                    return;
-                }
-                if (cIndex === 0) {
-                    currentP = document.createElement('p');
-                    const cursor = document.createElement('span');
-                    cursor.className = 'cursor';
-                    currentP.appendChild(document.createTextNode(''));
-                    currentP.appendChild(cursor);
-                    letterBody.appendChild(currentP);
-                }
-                const text = paragraphs[pIndex];
-                                if (cIndex < text.length) {
-                    const cursor = currentP.querySelector('.cursor');
-                    currentP.insertBefore(document.createTextNode(text[cIndex]), cursor);
-                    cIndex++;
-                    typeTimer = setTimeout(step, 55 + Math.random() * 30);
-                } else {
-                    const cursor = currentP.querySelector('.cursor');
-                    if (cursor) cursor.remove();
-                    pIndex++;
-                    cIndex = 0;
-                    typeTimer = setTimeout(step, 600);
-                }
-            }
-            step();
-        }
+  function step() {
+    if (!typing) return;
+    if (pIndex >= paragraphs.length) {
+      if (cursor) cursor.remove();
+      typing = false;
+      if (onDone) onDone();
+      return;
+    }
+    if (cIndex === 0) {
+      currentP = document.createElement('p');
+      textNode = document.createTextNode('');
+      cursor = document.createElement('span');
+      cursor.className = 'cursor';
+      currentP.appendChild(textNode);
+      currentP.appendChild(cursor);
+      letterBody.appendChild(currentP);
+    }
+    const text = paragraphs[pIndex];
+    if (cIndex < text.length) {
+      cIndex++;
+      textNode.textContent = text.slice(0, cIndex); // نص السطر كامل كل مرة، مو حرف منفصل
+      typeTimer = setTimeout(step, 55 + Math.random() * 30);
+    } else {
+      cursor.remove();
+      pIndex++;
+      cIndex = 0;
+      typeTimer = setTimeout(step, 600);
+    }
+  }
+  step();
+}
 
         if (showLetterBtn) {
             showLetterBtn.addEventListener('click', () => {
